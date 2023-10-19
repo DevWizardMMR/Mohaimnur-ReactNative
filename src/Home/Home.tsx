@@ -190,7 +190,7 @@ const styles:any = StyleSheet.create({
   topHeader: {
     textAlign: "center",
     fontSize: 25,
-    fontWeight: "semibold",
+    fontWeight: "bold",
     marginVertical: 5,
     letterSpacing: 1,
     fontFamily: "font-mooli",

@@ -1,11 +1,33 @@
-import { Text, View } from "react-native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import AllBlog from "./AllBlog";
+import OwnBlog from "./OwnBlog";
+
+const Tab = createMaterialTopTabNavigator();
 
 const Blog = () => {
-  return <>
-  <View>
-    <Text>This is Blog page</Text>
-  </View>
-  </>;
+  return (
+    <>
+      <Tab.Navigator
+        initialRouteName="PersonalBlog"
+        screenOptions={{
+          tabBarActiveTintColor: "black",
+          tabBarLabelStyle: { fontSize: 12 },
+          tabBarStyle: { backgroundColor: "white" },
+        }}
+      >
+        <Tab.Screen
+          name="AllBlog"
+          component={AllBlog}
+          options={{ tabBarLabel: "All Blog" }}
+        />
+        <Tab.Screen
+          name="PersonalBlog"
+          component={OwnBlog}
+          options={{ tabBarLabel: "Personal Blog" }}
+        />
+      </Tab.Navigator>
+    </>
+  );
 };
 
 export default Blog;
