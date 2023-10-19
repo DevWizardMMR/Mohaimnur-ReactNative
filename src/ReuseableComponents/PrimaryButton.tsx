@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
    },
    pText:{
     color:"white",
-    letterSpacing:-.5
+    letterSpacing:-.5,
+    textAlign:"center"
    }
 })
 

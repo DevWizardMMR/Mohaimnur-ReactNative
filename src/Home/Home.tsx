@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
 import PrimaryButton from "../ReuseableComponents/PrimaryButton";
 import Skillsection from "./Skillsection";
+import ProjectSection from "./ProjectSection";
 
 const Home = () => {
   const resumeData = {
@@ -175,6 +176,11 @@ const Home = () => {
           </Text>
         </View>
         <Skillsection skills={resumeData.skills} />
+        <ProjectSection projects={resumeData.projects}/>
+        <View style={{marginHorizontal:10, marginBottom:100}}>
+          <Text style={styles.topHeader}>Language</Text>
+          <Text>{resumeData.languageProficiency}</Text>
+        </View>
       </ScrollView>
     </>
   );
