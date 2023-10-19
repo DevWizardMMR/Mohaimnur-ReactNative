@@ -5,6 +5,7 @@ const Skillsection = ({ skills }) => {
   return (
     <>
       <View style={{width:"90%"}}>
+      
         <View
           style={{
             marginHorizontal: 10,
@@ -92,10 +93,10 @@ const Skillsection = ({ skills }) => {
 
 const styles = StyleSheet.create({
   skillTitle: {
+    fontFamily:"font-raleway",
     fontWeight: "bold",
     fontSize: 20,
-    borderBottomColor: "black",
-    marginRight: 8,
+    marginRight: 8
   },
 });
 export default Skillsection;

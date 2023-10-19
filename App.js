@@ -1,21 +1,29 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from './src/Home/Home';
-import About from './src/About/About';
-import Blog from './src/Blog/Blog';
-
-const Stack = createNativeStackNavigator();
+import BottomNavigator from "./src/Navigator/BottomNavigator";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "font-inter": require("./assets/fonts/font-inter.ttf"),
+    "font-raleway": require("./assets/fonts/Raleway-VariableFont_wght.ttf"),
+    "font-mooli": require("./assets/fonts/Mooli-Regular.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="about" component={About} />
-          <Stack.Screen name="blog" component={Blog} />
-        </Stack.Navigator>
+      <NavigationContainer onReady={onLayoutRootView}>
+        <BottomNavigator />
       </NavigationContainer>
     </>
   );

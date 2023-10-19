@@ -130,6 +130,7 @@ const Home = () => {
     languageProficiency:
       "Fluent in Bengali, full working knowledge of English, and a good understanding of Hindi language.",
   };
+  
 
   return (
     <>
@@ -161,8 +162,14 @@ const Home = () => {
             Title="Downlaod Resume"
             onpress={() => console.log("download resume button is click")}
           />
+          
           <Text
-            style={{ width: "95%", textAlign: "justify", marginVertical: 10 }}
+            style={{
+              width: "95%",
+              textAlign: "justify",
+              marginVertical: 10,
+              fontFamily: "font-raleway",
+            }}
           >
             {resumeData.careerObjective}
           </Text>
@@ -173,13 +180,14 @@ const Home = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles:any = StyleSheet.create({
   topHeader: {
     textAlign: "center",
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 25,
+    fontWeight: "semibold",
     marginVertical: 5,
     letterSpacing: 1,
+    fontFamily: "font-mooli",
   },
 });
 
