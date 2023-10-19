@@ -8,7 +8,7 @@ const Blog = () => {
   return (
     <>
       <Tab.Navigator
-        initialRouteName="PersonalBlog"
+        initialRouteName="AllBlog"
         screenOptions={{
           tabBarActiveTintColor: "black",
           tabBarLabelStyle: { fontSize: 12 },
@@ -16,14 +16,14 @@ const Blog = () => {
         }}
       >
         <Tab.Screen
-          name="AllBlog"
-          component={AllBlog}
-          options={{ tabBarLabel: "All Blog" }}
-        />
-        <Tab.Screen
           name="PersonalBlog"
           component={OwnBlog}
           options={{ tabBarLabel: "Personal Blog" }}
+        />
+        <Tab.Screen
+          name="AllBlog"
+          component={AllBlog}
+          options={{ tabBarLabel: "All Blog" }}
         />
       </Tab.Navigator>
     </>

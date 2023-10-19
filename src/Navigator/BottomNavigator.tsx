@@ -32,7 +32,7 @@ const BottomNavigator = () => {
           component={Home}
           options={{
             tabBarIcon: ({ focused }) => (
-              <House size={focused ? 25 : 20} color="blue" weight="thin" />
+              <House size={focused ? 25 : 20} color="black" weight="thin" />
             ),
           }}
         />
@@ -41,7 +41,7 @@ const BottomNavigator = () => {
           component={Blog}
           options={{
             tabBarIcon: ({ focused }) => (
-              <Cards size={focused ? 25 : 20} color="blue" weight="thin" />
+              <Cards size={focused ? 25 : 20} color="black" weight="thin" />
             ),
           }}
         />
@@ -50,7 +50,7 @@ const BottomNavigator = () => {
           component={About}
           options={{
             tabBarIcon: ({ focused }) => (
-              <User size={focused ? 25 : 20} color="blue" weight="thin" />
+              <User size={focused ? 25 : 20} color="black" weight="thin" />
             ),
           }}
         />
