@@ -26,6 +26,7 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
   return (
     <>
       <QueryClientProvider client={queryClient}>

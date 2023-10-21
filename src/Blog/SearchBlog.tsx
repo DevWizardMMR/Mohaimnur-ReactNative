@@ -4,7 +4,6 @@ import YoutubePlayer from 'react-native-youtube-iframe';
 
 const SearchBlog = ({ data }) => {
   const youtubeVideo = data.strYoutube.split("=")[1];
-  console.log(youtubeVideo);
   return (
     <>
       <View>
