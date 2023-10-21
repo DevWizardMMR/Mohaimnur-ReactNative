@@ -4,6 +4,12 @@ import BottomNavigator from "./src/Navigator/BottomNavigator";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,9 +28,11 @@ export default function App() {
   }
   return (
     <>
-      <NavigationContainer onReady={onLayoutRootView}>
-        <BottomNavigator />
-      </NavigationContainer>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer onReady={onLayoutRootView}>
+          <BottomNavigator />
+        </NavigationContainer>
+      </QueryClientProvider>
     </>
   );
 }
